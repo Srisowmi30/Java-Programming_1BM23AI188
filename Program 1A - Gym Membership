@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class GymMembership {
+    String name;
+    int age;
+    boolean status;
+    int duration;
+    void calculate()
+    {
+        int amount;
+        amount=duration*100;
+        System.out.println("Fees: " +amount);
+    }
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Status:" + (status ? "Active" : "Inactive"));
+        System.out.println("Duration: " + duration);
+    }
+    public static void main (String[] args)
+    {
+       Scanner scanner = new Scanner(System.in);
+       Gym g1 = new Gym();
+       System.out.print("Enter the name: ");
+       g1.name = scanner.nextLine();
+       System.out.print("Enter the age: ");
+       g1.age = scanner.nextInt();
+       System.out.print("Enter the status(True/False): ");
+       g1.status = scanner.nextBoolean();
+       System.out.print("Enter the duration: ");
+       g1.duration = scanner.nextInt();
+       g1.display();
+       g1.calculate();
+       scanner.close();
+    }
+}
